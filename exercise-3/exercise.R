@@ -39,16 +39,19 @@ rownames(expenditure)[expenditure$X1960 == max(expenditure$X1960)]
 # Write a function that takes in a year as a parameter, and 
 # returns the highest spending category of that year
 HighestSpendingCategory <- function(year) {
-  yearColumn <- paste(c('X', 1940), collapse = "")
-  return(rownames(expenditure)[expenditure[[yearColumn]] == max(expenditure[[yearColumn]])])
+  return(rownames(expenditure)[expenditure[[year]] == max(expenditure[[year]])])
 }
 
 # Using your function, determine the highest spending category of each year
-HighestSpendingCategory(1940)
-HighestSpendingCategory(1945)
-HighestSpendingCategory(1950)
-HighestSpendingCategory(1955)
-HighestSpendingCategory(1960)
+HighestSpendingCategory('X1940')
+HighestSpendingCategory('X1945')
+HighestSpendingCategory('X1950')
+HighestSpendingCategory('X1955')
+HighestSpendingCategory('X1960')
 
 # Write a loop to cycle through the years, and store the highest spending category of
 # each year in a list
+highest.spendings <- list()
+for(year in colnames(expenditure)) {
+  highest.spendings[[length(highest.spendings) + 1]] <- HighestSpendingCategory(year)
+}
