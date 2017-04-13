@@ -1,6 +1,6 @@
 # Exercise 6: Husky Football 2016 Season
 # Read in the Husky Football 2016 game data into a variable called `husky.games.2016`
-setwd('~/Documents/University of Washington/Junior/Spring Quarter/Info 201/Classwork/m10-dataframes/exercise-6')
+setwd('~/University of Washington/Junior/Spring Quarter/Info 201/Classwork/m10-dataframes/exercise-6')
 husky.games.2016 <- read.csv('./data/huskies_2016.csv', stringsAsFactors = FALSE)
 View(husky.games.2016)
 
